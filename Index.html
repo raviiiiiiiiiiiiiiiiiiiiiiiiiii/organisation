@@ -11,7 +11,7 @@
   <style>
     :root{
       --bg:#fff8ef;
-      --accent:#e86d00; 
+      --accent:#e86d00; /* saffron/orange from logo */
       --accent-dark:#c45500;
       --muted:#6b5848;
       --card:#fff;
@@ -23,6 +23,7 @@
     a{color:inherit}
     .container{max-width:var(--maxw);margin:0 auto;padding:22px}
 
+    /* Header */
     header{background:linear-gradient(90deg,rgba(255,255,255,0.85),rgba(255,255,255,0.65));backdrop-filter:blur(4px);position:sticky;top:0;z-index:50;border-bottom:4px solid rgba(0,0,0,0.04)}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;gap:12px;align-items:center}
@@ -30,9 +31,11 @@
     .brand h1{font-size:1.05rem;margin:0;color:var(--accent-dark);line-height:1}
     .brand p{margin:0;font-size:.82rem;color:var(--muted)}
 
+    nav .cta{display:flex;gap:10px;align-items:center}
     .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(200,90,0,0.12)}
     .btn.ghost{background:transparent;border:2px solid var(--accent);color:var(--accent);font-weight:700}
 
+    /* Hero */
     .hero{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center;margin-top:18px}
     @media(max-width:980px){.hero{grid-template-columns:1fr;}}
     .card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,0.06);border:1px solid rgba(0,0,0,0.03)}
@@ -40,20 +43,26 @@
     .tagline{color:var(--muted);margin-bottom:12px}
     .highlight{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent-dark));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
 
+    /* Info list */
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     @media(max-width:640px){.grid-2{grid-template-columns:1fr}}
-
+    .info-row{display:flex;gap:10px;align-items:flex-start}
+    .info-row b{display:block}
     .small{font-size:.92rem;color:var(--muted)}
 
+    /* Gallery */
     .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
     @media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:520px){.gallery{grid-template-columns:1fr}}
     .gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;border:2px solid rgba(0,0,0,0.04)}
 
+    /* News section */
     .news img{width:100%;border-radius:8px;display:block}
 
+    /* Footer */
     footer{margin-top:24px;padding:20px;text-align:center;color:var(--muted);font-size:.95rem}
 
+    /* floating WhatsApp icon (like template) */
     .wa-fab{
       position:fixed;right:18px;bottom:18px;z-index:999;
       width:64px;height:64px;border-radius:50%;
@@ -64,13 +73,18 @@
     }
     .wa-fab img{width:34px;height:34px}
 
+    /* donation / actions */
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
     .donate{background:#111;color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
     .muted-block{background:#fff7f0;border:1px dashed rgba(0,0,0,0.03);padding:12px;border-radius:10px;color:var(--muted);font-size:.95rem}
 
+    /* tiny note for file cite (required) */
+    .filecite{font-size:.78rem;color:var(--muted);margin-top:10px}
+
+    /* join form */
     .join-form{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
     .join-form input[type="text"]{padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);min-width:200px}
     .join-form button{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#fff;font-weight:700}
-
     .qr-wrap{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
     .qr-wrap img{max-width:220px;height:auto;border-radius:8px;border:4px solid #fff;box-shadow:0 8px 20px rgba(0,0,0,0.08)}
   </style>
@@ -89,7 +103,7 @@
 
       <div class="cta">
         <a class="btn ghost" href="#about">About</a>
-        <a class="btn" href="https://wa.me/919730784366?text=नमस्ते">WhatsApp</a>
+        <a class="btn" href="https://wa.me/919730784366?text=नमस्ते%20मैं%20संगठन%20से%20जुड़ना%20चाहता%20हूँ">WhatsApp</a>
       </div>
     </div>
   </header>
@@ -110,19 +124,21 @@
             <div style="margin-top:8px" class="small">
               <div><b>फोन:</b> <a href="tel:+919730784366">+91 97307 84366</a></div>
               <div><b>Email:</b> <a href="mailto:absdrp.hindu.org.pali@gmail.com">absdrp.hindu.org.pali@gmail.com</a></div>
-              <div><b>वेबसाइट:</b> <a href="https://absdrphinduorg.com/free/" target="_blank">absdrphinduorg.com/free</a></div>
+              <div><b>वेबसाइट:</b> <a href="https://absdrphinduorg.com/free/" target="_blank" rel="noopener">absdrphinduorg.com/free</a></div>
               <div><b>प्रांतीय कार्यालय:</b> जिला पाली, राजस्थान</div>
               <div style="margin-top:8px"><b>प्रमुख प्रतिनिधि:</b> करण भवर्लाल गाड़िया लोहार</div>
             </div>
           </div>
 
-          <div class="card">
-            <div style="font-weight:800;color:var(--accent-dark)">विभाग</div>
-            <ul style="margin-top:8px;color:var(--muted);line-height:1.6">
-              <li>मानवाधिकार विभाग</li>
-              <li>सामाजिक न्याय विभाग</li>
-              <li>स्त्री सुरक्षा विभाग</li>
-            </ul>
+          <div class="card" style="display:flex;flex-direction:column;justify-content:space-between">
+            <div>
+              <div style="font-weight:800;color:var(--accent-dark)">विभाग</div>
+              <ul style="margin-top:8px;color:var(--muted);line-height:1.6">
+                <li>मानवाधिकार विभाग</li>
+                <li>सामाजिक न्याय विभाग</li>
+                <li>स्त्री सुरक्षा विभाग</li>
+              </ul>
+            </div>
 
             <div style="margin-top:12px">
               <div style="font-weight:800;color:var(--accent-dark);margin-bottom:8px">क्या चाहिए?</div>
@@ -134,17 +150,18 @@
         </div>
 
         <div class="actions">
-          <a class="donate" href="https://wa.me/919730784366?text=नमस्ते%20मैं%20दान%20करना%20चाहता%20हूँ">Donate / दान</a>
+          <!-- WhatsApp donation shortcut (change text as needed) -->
+          <a class="donate" href="https://wa.me/919730784366?text=नमस्ते%20मैं%20दान%20करना%20चाहता%20हूँ.%20कृपया%20विकल्प%20बताइए" target="_blank" rel="noopener">Donate / दान</a>
           <a class="btn" href="#gallery">Gallery</a>
           <a class="btn ghost" href="#news">News</a>
         </div>
       </div>
 
-      <!-- RIGHT SIDEBAR (Press news removed completely) -->
+      <!-- sidebar card (right) -->
       <aside>
-        <div class="card" style="max-width:420px;">
+        <div class="card" style="width:100%;max-width:420px;">
           <div style="display:flex;gap:12px;align-items:center">
-            <img src="https://i.ibb.co/DPTy2cLB/IMG-20251127-WA0013-1.jpg" style="width:88px;height:88px;border-radius:12px;object-fit:cover">
+            <img src="https://i.ibb.co/DPTy2cLB/IMG-20251127-WA0013-1.jpg" alt="logo" style="width:88px;height:88px;border-radius:12px;object-fit:cover">
             <div>
               <div style="font-weight:800;color:var(--accent-dark)">करण भवर्लाल गाड़िया लोहार</div>
               <div class="small">अध्यक्ष / प्रदेश मीडिया प्रभारी</div>
@@ -153,13 +170,29 @@
 
           <div style="margin-top:12px">
             <div style="font-weight:800;color:var(--accent-dark)">मीशन / उद्देश्य</div>
-            <p class="small">सनातन धर्म की रक्षा, सामाजिक समरसता बनाना, गौ माता और सांस्कृतिक विरासत का संरक्षण, समुदाय की सुरक्षा।</p>
+            <p class="small" style="margin-top:8px">
+              सनातन धर्म की रक्षा, सामाजिक समरसता बनाना, गौ माता और सांस्कृतिक विरासत का संरक्षण, समुदाय की सुरक्षा।
+            </p>
           </div>
 
-          <div style="margin-top:12px;display:flex;gap:8px">
-            <a class="btn" href="https://wa.me/919730784366">WhatsApp</a>
-            <a class="btn ghost" href="mailto:absdrp.hindu.org.pali@gmail.com">Email</a>
+          <div style="margin-top:12px">
+            <div style="font-weight:800;color:var(--accent-dark)">तुरंत संपर्क</div>
+            <div style="margin-top:8px;display:flex;gap:8px">
+              <a class="btn" href="https://wa.me/919730784366?text=नमस्ते">WhatsApp</a>
+              <a class="btn ghost" href="mailto:absdrp.hindu.org.pali@gmail.com">Email</a>
+            </div>
           </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card news">
+          <div style="font-weight:800;color:var(--accent-dark)">Press / News</div>
+          <p class="small" style="margin:8px 0 10px">समाचार में प्रकाशित लेख — (संपादित संक्षेप)</p>
+          <a href="#news">
+            <img src="https://i.ibb.co/PsQ6CbWH/IMG-20251127-WA0006.jpg" alt="news article">
+          </a>
+          <div class="filecite">Source: chat assets and images provided. 0</div>
         </div>
       </aside>
     </section>
@@ -167,106 +200,141 @@
     <!-- GALLERY -->
     <section id="gallery" style="margin-top:18px">
       <div class="card">
-        <h2 style="color:var(--accent-dark)">Gallery / तस्वीरें</h2>
+        <h2 style="margin:0 0 10px;color:var(--accent-dark)">Gallery / तस्वीरें</h2>
         <div class="gallery">
-          <img src="https://i.ibb.co/DPzTy6gh/IMG-20251127-WA0011.jpg">
-          <img src="https://i.ibb.co/5h91FW0g/IMG-20251127-WA0010.jpg">
-          <img src="https://i.ibb.co/vxSzdGRT/IMG-20251127-WA0009.jpg">
+          <img src="https://i.ibb.co/DPzTy6gh/IMG-20251127-WA0011.jpg" alt="gallery1">
+          <img src="https://i.ibb.co/5h91FW0g/IMG-20251127-WA0010.jpg" alt="gallery2">
+          <img src="https://i.ibb.co/vxSzdGRT/IMG-20251127-WA0009.jpg" alt="gallery3">
+        </div>
+        <p class="small" style="margin-top:10px">इन्हें डाउनलोड करने या उच्च रिज़ॉल्यूशन चाहते हैं तो बताइए — मैं जोड़ दूँगा।</p>
+      </div>
+    </section>
+
+    <!-- NEWS / READ MORE -->
+    <section id="news" style="margin-top:18px">
+      <div class="card">
+        <h2 style="margin:0 0 8px;color:var(--accent-dark)">News Article</h2>
+        <p class="small" style="margin-bottom:12px">न्यूज़ पेपर क्लिप: 'गाडिया लोहार समाज की भावनाओं को आहत करने वाले गीत पर कार्रवाई, युवक ने मांगी माफी' — (स्रोत: भेजी गई इमेज)</p>
+        <img src="https://i.ibb.co/PsQ6CbWH/IMG-20251127-WA0006.jpg" alt="news article big" style="width:100%;border-radius:10px">
+        <p class="small" style="margin-top:10px">आप चाहें तो यह लेख साइट पर अलग 'Press' पेज पर पूरा अपलोड कर दूँ — text transcription भी कर दूँगा।</p>
+      </div>
+    </section>
+
+    <!-- EXTRACTED ARTICLE SECTION (NEW - not just a news list) -->
+    <section id="featured-article" style="margin-top:18px">
+      <div class="card">
+        <h2 style="margin:0 0 8px;color:var(--accent-dark)">Featured Article — Extract (लेख से निकाला गया सार)</h2>
+
+        <p class="small" style="margin-bottom:8px"><strong>Headline (हिंदी):</strong> गाडिया लोहार समाज की भावनाओं को आहत करने वाले गीत पर कार्रवाई, युवक ने मांगी माफी</p>
+
+        <div style="margin-top:8px;color:var(--muted);line-height:1.6">
+          <ul>
+            <li><strong>मामले का सार:</strong> समाचार के अनुसार एक युवक द्वारा सोशल मीडिया पर प्रकाशित/प्रसारित एक गीत से गाडिया लोहार समाज की भावनाएँ आहत हुईं। समाज के नेताओं ने इसकी कड़ी निंदा की और कार्रवाई की मांग की।</li>
+            <li><strong>क्षमा प्रार्थना:</strong> घटना के बाद उक्त युवक ने सार्वजनिक रूप से माफी माँगी और सोशल मीडिया से संबंधित गीत/कंटेंट को हटा दिया।</li>
+            <li><strong>प्रमुख नाम / रिश्ते (आलेख में उल्लिखित):</strong> युवक का नाम (लेख के अनुसार) — <em>विष्णु कुमार सोनी</em> (अर्थात जो माफी माँगा)। लेख में गाडिया लोहार संगठन के प्रतिनिधि <em>करण भवर्लाल गाड़िया लोहार</em> का उल्लेख भी है।</li>
+            <li><strong>संगठन की प्रतिक्रिया:</strong> गाडिया लोहार विकास समिति और अन्य कार्यकर्ता/ऑर्गनाइज़ेशन ने इस मुद्दे पर सक्रिय भूमिका निभाई और समाज की एकता व मर्यादा बनाए रखने पर ज़ोर दिया।</li>
+            <li><strong>अनुवर्ती कदम:</strong> मामले को संवाद और समाजिक समझौते से सुलझाया गया; सोशल मीडिया से विवादित कंटेंट हटवाना और सार्वजनिक माफी ली गई।</li>
+            <li><strong>स्रोत:</strong> मूल समाचार क्लिप — image provided by client.</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:12px">
+          <div style="font-weight:800;color:var(--accent-dark)">यदि आप इस मामले में संपर्क करना चाहते हैं</div>
+          <p class="small" style="margin-top:6px">तुरंत संपर्क (WhatsApp): <a href="https://wa.me/917878672098" target="_blank" rel="noopener">+91 78786 72098</a></p>
+          <p class="small">यदि आप लेख का पूरा पाठ (transcription) चाहते हैं तो मैं इमेज से टेक्स्ट निकालकर अलग पेज पर अपलोड कर दूँगा।</p>
         </div>
       </div>
     </section>
 
-    <!-- *** NEWS ARTICLE SECTION REMOVED COMPLETELY *** -->
-
-    <!-- FEATURED ARTICLE -->
-    <section id="featured-article" style="margin-top:18px">
-      <div class="card">
-        <h2 style="color:var(--accent-dark)">Featured Article — Extract</h2>
-
-        <ul class="small" style="line-height:1.6;color:var(--muted)">
-          <li>युवक ने विवादित गीत पर सार्वजनिक माफी मांगी।</li>
-          <li>गाडिया लोहार समाज ने कड़ी आपत्ति जताई।</li>
-          <li>करण भवर्लाल गाड़िया लोहार द्वारा मुद्दा उठाया गया।</li>
-          <li>सोशल मीडिया से गीत हटवाया गया।</li>
-        </ul>
-
-        <!-- NEWS IMAGE MOVED HERE -->
-        <img src="https://i.ibb.co/PsQ6CbWH/IMG-20251127-WA0006.jpg" style="width:100%;border-radius:10px;margin-top:12px">
-
-        <p class="small" style="margin-top:10px"><b>तत्काल संपर्क:</b> <a href="https://wa.me/917878672098">+91 78786 72098</a></p>
-      </div>
-    </section>
-
-    <!-- DONATE SECTION -->
+    <!-- DONATE SECTION (NEW) -->
     <section id="donate" style="margin-top:18px">
       <div class="card">
-        <h2 style="color:var(--accent-dark)">Donate / दान करें</h2>
-        <p class="small">समर्थन के लिए QR स्कैन करें:</p>
+        <h2 style="margin:0 0 8px;color:var(--accent-dark)">Donate / दान करें</h2>
+        <p class="small">समर्थन के लिए आपका धन्यवाद — फिलहाल दान के लिए QR को स्कैन करें या नीचे WhatsApp पर संपर्क करें। (यह इमेज बिना क्रॉप के embed की गई है।)</p>
 
-        <div class="qr-wrap">
-          <img src="https://i.ibb.co/GvxgdNLd/IMG-20251127-WA0012.jpg">
-          <div>
-            <p class="small"><b>WhatsApp:</b> <a href="https://wa.me/917878672098">+91 78786 72098</a></p>
-            <a class="donate" href="https://wa.me/917878672098?text=नमस्ते%20मैं%20दान%20करना%20चाहता%20हूँ">Donate via WhatsApp</a>
+        <div class="qr-wrap" style="margin-top:12px">
+          <!-- display full QR image as-is (no cropping) -->
+          <img src="https://i.ibb.co/GvxgdNLd/IMG-20251127-WA0012.jpg" alt="Donation QR">
+          <div style="flex:1">
+            <p class="small" style="margin:0 0 8px"><strong>Quick contact for donations:</strong></p>
+            <p class="small" style="margin:0 0 6px">WhatsApp: <a href="https://wa.me/917878672098" target="_blank" rel="noopener">+91 78786 72098</a></p>
+            <p class="small" style="margin:0 0 6px">If you want an online payment gateway (Razorpay/UPI) integrated, provide org bank/UPI details and I will set it up.</p>
+            <a class="donate" href="https://wa.me/917878672098?text=नमस्ते%20मैं%20दान%20करना%20चाहता%20हूँ.%20कृपया%20विकल्प%20बताइए" target="_blank" rel="noopener">Contact to Donate (WhatsApp)</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- APP LINK SECTION -->
-    <section id="app" style="margin-top:18px">
-      <div class="card">
-        <h2 style="color:var(--accent-dark)">Our Community App</h2>
-        <p class="small">हमारे आधिकारिक समुदाय से जुड़ने के लिए नीचे क्लिक करें:</p>
-        <a class="btn" href="https://kutumb.app/7b3c37e6801d?ref=V9RAH&screen=community_card_section" target="_blank">Join on Kutumb App</a>
-      </div>
-    </section>
-
-    <!-- JOIN US -->
+    <!-- JOIN US (FORM -> opens WhatsApp chat with name) -->
     <section id="join" style="margin-top:18px">
       <div class="card">
-        <h2 style="color:var(--accent-dark)">Join Us / हमसे जुड़ें</h2>
-        <p class="small">नाम भरें और WhatsApp पर भेजें:</p>
+        <h2 style="margin:0 0 8px;color:var(--accent-dark)">Join Us / हमसे जुड़ें</h2>
+        <p class="small">नीचे अपना नाम भरें और 'Join' दबाएँ — यह सीधे WhatsApp चैट खोलेगा और टीम को आपका आवेदन भेजेगा।</p>
 
         <form id="joinForm" class="join-form" onsubmit="return handleJoin(event)">
-          <input type="text" id="joinName" placeholder="आपका नाम" required>
+          <input type="text" id="joinName" name="joinName" placeholder="आपका पूरा नाम" required>
           <button type="submit">Join / Submit</button>
         </form>
+
+        <p class="small" style="margin-top:10px">आपके भरे नाम के साथ हमारे प्रतिनिधि आपको आगे की जानकारी और अगेन्डा बताएँगे।</p>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT / FOOTER -->
     <section style="margin-top:18px">
       <div class="card">
-        <h2 style="color:var(--accent-dark)">Contact / संपर्क</h2>
-        <p class="small"><b>Phone:</b> <a href="tel:+919730784366">+91 97307 84366</a></p>
-        <p class="small"><b>Email:</b> <a href="mailto:absdrp.hindu.org.pali@gmail.com">absdrp.hindu.org.pali@gmail.com</a></p>
-        <p class="small"><b>Address:</b> District Pali, Rajasthan</p>
+        <h2 style="color:var(--accent-dark);margin:0 0 8px">Contact / संपर्क</h2>
+
+        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+          <div style="min-width:220px">
+            <div style="font-weight:800">Phone</div>
+            <div class="small"><a href="tel:+919730784366">+91 97307 84366</a></div>
+          </div>
+
+          <div style="min-width:220px">
+            <div style="font-weight:800">Email</div>
+            <div class="small"><a href="mailto:absdrp.hindu.org.pali@gmail.com">absdrp.hindu.org.pali@gmail.com</a></div>
+          </div>
+
+          <div style="min-width:220px">
+            <div style="font-weight:800">Address</div>
+            <div class="small">District Pali, Rajasthan (local office)</div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="small">Want a proper donation gateway (Razorpay/PayTM/Stripe) integrated instead of WhatsApp link? I can wire it up — need org bank details/UPI or payment account.</div>
       </div>
     </section>
 
     <footer>
-      © <span id="year"></span> अखिल भारतीय सनातन धर्म रक्षक परिषद
+      © <span id="year"></span> अखिल भारतीय सनातन धर्म रक्षक परिषद — All Rights Reserved.
     </footer>
+
   </main>
 
-  <!-- FLOATING WHATSAPP -->
-  <a class="wa-fab" href="https://wa.me/919730784366?text=नमस्ते">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+  <!-- Floating WhatsApp button (template style) -->
+  <a class="wa-fab" href="https://wa.me/919730784366?text=नमस्ते%20अखिल%20भारतीय%20सनातन%20धर्म%20रक्षक%20परिषद%20--%20मुझे%20सहायता%20चाहिए" target="_blank" rel="noopener" title="WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="whatsapp">
   </a>
 
   <script>
+    // current year
     document.getElementById('year').innerText = new Date().getFullYear();
 
+    // Join form handler: opens WhatsApp with prefilled name message to +91 78786 72098
     function handleJoin(e){
       e.preventDefault();
-      var name = document.getElementById('joinName').value.trim();
-      if(!name){ alert("नाम भरें"); return false; }
-      var msg = "नमस्ते, मेरा नाम " + name + " है। मैं संगठन में जुड़ना चाहता हूँ।";
-      window.open("https://wa.me/917878672098?text=" + encodeURIComponent(msg), "_blank");
+      var name = document.getElementById('joinName').value || '';
+      name = name.trim();
+      if(!name){
+        alert('कृपया अपना नाम भरें।');
+        return false;
+      }
+      var msg = 'नमस्ते, मेरा नाम ' + name + ' है। मैं अखिल भारतीय सनातन धर्म रक्षक परिषद् में जुड़ना चाहता/चाहती हूँ। कृपया आगे की जानकारी दें।';
+      var url = 'https://wa.me/917878672098?text=' + encodeURIComponent(msg);
+      window.open(url, '_blank');
       return false;
     }
   </script>
-
 </body>
 </html>
