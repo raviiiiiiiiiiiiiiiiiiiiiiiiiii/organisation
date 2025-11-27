@@ -11,7 +11,7 @@
   <style>
     :root{
       --bg:#fff8ef;
-      --accent:#e86d00;
+      --accent:#e86d00; 
       --accent-dark:#c45500;
       --muted:#6b5848;
       --card:#fff;
@@ -20,7 +20,7 @@
     }
     *{box-sizing:border-box}
     body{font-family:"Noto Sans",system-ui,Arial,sans-serif;background:var(--bg);color:#2b2b2b;margin:0;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none;}
+    a{color:inherit}
     .container{max-width:var(--maxw);margin:0 auto;padding:22px}
 
     header{background:linear-gradient(90deg,rgba(255,255,255,0.85),rgba(255,255,255,0.65));backdrop-filter:blur(4px);position:sticky;top:0;z-index:50;border-bottom:4px solid rgba(0,0,0,0.04)}
@@ -30,15 +30,15 @@
     .brand h1{font-size:1.05rem;margin:0;color:var(--accent-dark);line-height:1}
     .brand p{margin:0;font-size:.82rem;color:var(--muted)}
 
-    .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;font-weight:700;box-shadow:0 6px 18px rgba(200,90,0,0.12)}
-    .btn.ghost{background:transparent;border:2px solid var(--accent);color:var(--accent);}
+    .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(200,90,0,0.12)}
+    .btn.ghost{background:transparent;border:2px solid var(--accent);color:var(--accent);font-weight:700}
 
     .hero{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center;margin-top:18px}
     @media(max-width:980px){.hero{grid-template-columns:1fr;}}
     .card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,0.06);border:1px solid rgba(0,0,0,0.03)}
     .org-name{color:var(--accent-dark);font-weight:800;font-size:1.4rem;margin-bottom:6px}
     .tagline{color:var(--muted);margin-bottom:12px}
-    .highlight{background:linear-gradient(90deg,var(--accent),var(--accent-dark));-webkit-background-clip:text;color:transparent;font-weight:800}
+    .highlight{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent-dark));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
 
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     @media(max-width:640px){.grid-2{grid-template-columns:1fr}}
@@ -50,90 +50,240 @@
     @media(max-width:520px){.gallery{grid-template-columns:1fr}}
     .gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;border:2px solid rgba(0,0,0,0.04)}
 
-    .wa-fab{position:fixed;right:18px;bottom:18px;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--accent),var(--accent-dark));box-shadow:0 12px 30px rgba(200,90,0,0.25);border:4px solid #fff;z-index:999;}
-    .wa-fab img{width:34px;height:34px}
-
-    .donate{background:#111;color:#fff;padding:10px 14px;border-radius:10px;font-weight:700}
-    .muted-block{background:#fff7f0;border:1px dashed rgba(0,0,0,0.03);padding:12px;border-radius:10px;color:var(--muted);}
-
-    .join-form{display:flex;gap:8px;flex-wrap:wrap}
-    .join-form input{padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.1)}
-    .join-form button{padding:10px 14px;border-radius:10px;background:var(--accent);color:#fff;font-weight:700;border:none}
+    .news img{width:100%;border-radius:8px;display:block}
 
     footer{margin-top:24px;padding:20px;text-align:center;color:var(--muted);font-size:.95rem}
+
+    .wa-fab{
+      position:fixed;right:18px;bottom:18px;z-index:999;
+      width:64px;height:64px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(180deg,var(--accent),var(--accent-dark));
+      box-shadow:0 12px 30px rgba(200,90,0,0.25);
+      border:4px solid #fff;
+    }
+    .wa-fab img{width:34px;height:34px}
+
+    .donate{background:#111;color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    .muted-block{background:#fff7f0;border:1px dashed rgba(0,0,0,0.03);padding:12px;border-radius:10px;color:var(--muted);font-size:.95rem}
+
+    .join-form{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .join-form input[type="text"]{padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);min-width:200px}
+    .join-form button{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#fff;font-weight:700}
+
+    .qr-wrap{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .qr-wrap img{max-width:220px;height:auto;border-radius:8px;border:4px solid #fff;box-shadow:0 8px 20px rgba(0,0,0,0.08)}
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="container nav">
       <div class="brand">
-        <img src="https://i.ibb.co/DPTy2cLB/IMG-20251127-WA0013-1.jpg">
+        <img src="https://i.ibb.co/DPTy2cLB/IMG-20251127-WA0013-1.jpg" alt="ABSDRP Logo">
         <div>
           <h1>अखिल भारतीय सनातन धर्म रक्षक परिषद</h1>
           <p>ABSDRP — Akhil Bharatiya Sanatan Dharma Rakshak Parishad</p>
         </div>
       </div>
+
       <div class="cta">
         <a class="btn ghost" href="#about">About</a>
-        <a class="btn" href="https://wa.me/919730784366">WhatsApp</a>
+        <a class="btn" href="https://wa.me/919730784366?text=नमस्ते">WhatsApp</a>
       </div>
     </div>
   </header>
 
   <main class="container">
 
-    <!-- EVERYTHING YOU APPROVED ABOVE (unchanged) -->
-    <!-- I am NOT rewriting it here to save space in chat, but in your final output, the ENTIRE file stays the same. -->
-    <!-- The ONLY new part is the next section below. -->
-
-    <!-- APP LINK SECTION (NEW) -->
-    <section id="app" style="margin-top:18px">
+    <!-- HERO -->
+    <section class="hero">
       <div class="card">
-        <h2 style="margin:0 0 8px;color:var(--accent-dark)">Our Community App</h2>
-        <p class="small">हमारे आधिकारिक समुदाय से जुड़ने के लिए नीचे दिए गए ऐप लिंक पर क्लिक करें:</p>
+        <div class="org-name">अखिल भारतीय सनातन धर्म रक्षक परिषद</div>
+        <div class="tagline">जनहित भारतीय सनातन धर्म रक्षक परिषद — <span class="highlight">Sanatan Dharma | Cultural Protection</span></div>
 
-        <a class="btn" style="margin-top:10px;display:inline-block"
-           href="https://kutumb.app/7b3c37e6801d?ref=V9RAH&screen=community_card_section"
-           target="_blank">
-          Open Community App
-        </a>
+        <p class="small">हमारा उद्देश्य: सनातन धर्म की रक्षा, सामाजिक सुरक्षा, मानव अधिकार और मातृभूमि के प्रति सेवा।</p>
+
+        <div style="margin-top:12px" class="grid-2">
+          <div class="card" style="background:#fff9f3;">
+            <div style="font-weight:800;color:var(--accent-dark)">मुख्य संपर्क</div>
+            <div style="margin-top:8px" class="small">
+              <div><b>फोन:</b> <a href="tel:+919730784366">+91 97307 84366</a></div>
+              <div><b>Email:</b> <a href="mailto:absdrp.hindu.org.pali@gmail.com">absdrp.hindu.org.pali@gmail.com</a></div>
+              <div><b>वेबसाइट:</b> <a href="https://absdrphinduorg.com/free/" target="_blank">absdrphinduorg.com/free</a></div>
+              <div><b>प्रांतीय कार्यालय:</b> जिला पाली, राजस्थान</div>
+              <div style="margin-top:8px"><b>प्रमुख प्रतिनिधि:</b> करण भवर्लाल गाड़िया लोहार</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="font-weight:800;color:var(--accent-dark)">विभाग</div>
+            <ul style="margin-top:8px;color:var(--muted);line-height:1.6">
+              <li>मानवाधिकार विभाग</li>
+              <li>सामाजिक न्याय विभाग</li>
+              <li>स्त्री सुरक्षा विभाग</li>
+            </ul>
+
+            <div style="margin-top:12px">
+              <div style="font-weight:800;color:var(--accent-dark);margin-bottom:8px">क्या चाहिए?</div>
+              <div class="muted-block">
+                Donation system, event gallery, press/news section, contact & WhatsApp integration.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="donate" href="https://wa.me/919730784366?text=नमस्ते%20मैं%20दान%20करना%20चाहता%20हूँ">Donate / दान</a>
+          <a class="btn" href="#gallery">Gallery</a>
+          <a class="btn ghost" href="#news">News</a>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card" style="max-width:420px;">
+          <div style="display:flex;gap:12px;align-items:center">
+            <img src="https://i.ibb.co/DPTy2cLB/IMG-20251127-WA0013-1.jpg" style="width:88px;height:88px;border-radius:12px;object-fit:cover">
+            <div>
+              <div style="font-weight:800;color:var(--accent-dark)">करण भवर्लाल गाड़िया लोहार</div>
+              <div class="small">अध्यक्ष / प्रदेश मीडिया प्रभारी</div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <div style="font-weight:800;color:var(--accent-dark)">मीशन / उद्देश्य</div>
+            <p class="small">सनातन धर्म की रक्षा, सामाजिक समरसता बनाना, गौ माता और सांस्कृतिक विरासत का संरक्षण, समुदाय की सुरक्षा।</p>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <a class="btn" href="https://wa.me/919730784366">WhatsApp</a>
+            <a class="btn ghost" href="mailto:absdrp.hindu.org.pali@gmail.com">Email</a>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card news">
+          <div style="font-weight:800;color:var(--accent-dark)">Press / News</div>
+          <p class="small">समाचार में प्रकाशित लेख — (संपादित संक्षेप)</p>
+          <a href="#news">
+            <img src="https://i.ibb.co/PsQ6CbWH/IMG-20251127-WA0006.jpg">
+          </a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" style="margin-top:18px">
+      <div class="card">
+        <h2 style="color:var(--accent-dark)">Gallery / तस्वीरें</h2>
+        <div class="gallery">
+          <img src="https://i.ibb.co/DPzTy6gh/IMG-20251127-WA0011.jpg">
+          <img src="https://i.ibb.co/5h91FW0g/IMG-20251127-WA0010.jpg">
+          <img src="https://i.ibb.co/vxSzdGRT/IMG-20251127-WA0009.jpg">
+        </div>
       </div>
     </section>
 
-    <!-- CONTACT + FOOTER + SCRIPTS (unchanged from your approved version) -->
-
-    <section style="margin-top:18px">
+    <!-- NEWS ARTICLE -->
+    <section id="news" style="margin-top:18px">
       <div class="card">
-        <h2 style="color:var(--accent-dark);margin:0 0 8px">Contact / संपर्क</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
-          <div style="min-width:220px">
-            <div style="font-weight:800">Phone</div>
-            <div class="small"><a href="tel:+919730784366">+91 97307 84366</a></div>
-          </div>
-          <div style="min-width:220px">
-            <div style="font-weight:800">Email</div>
-            <div class="small"><a href="mailto:absdrp.hindu.org.pali@gmail.com">absdrp.hindu.org.pali@gmail.com</a></div>
-          </div>
-          <div style="min-width:220px">
-            <div style="font-weight:800">Address</div>
-            <div class="small">District Pali, Rajasthan</div>
+        <h2 style="color:var(--accent-dark)">News Article</h2>
+        <p class="small">"गाडिया लोहार समाज की भावनाओं को आहत करने वाले गीत पर कार्रवाई, युवक ने मांगी माफी"</p>
+        <img src="https://i.ibb.co/PsQ6CbWH/IMG-20251127-WA0006.jpg" style="width:100%;border-radius:10px">
+      </div>
+    </section>
+
+    <!-- EXTRACTED ARTICLE -->
+    <section id="featured-article" style="margin-top:18px">
+      <div class="card">
+        <h2 style="color:var(--accent-dark)">Featured Article — Extract</h2>
+        <ul class="small" style="line-height:1.6;color:var(--muted)">
+          <li>युवक ने विवादित गीत पर सार्वजनिक माफी मांगी।</li>
+          <li>गाडिया लोहार समाज ने कड़ी आपत्ति जताई।</li>
+          <li>करण भवर्लाल गाड़िया लोहार द्वारा मुद्दा उठाया गया।</li>
+          <li>सोशल मीडिया से गीत हटवाया गया।</li>
+        </ul>
+
+        <p class="small"><b>तत्काल संपर्क:</b> <a href="https://wa.me/917878672098">+91 78786 72098</a></p>
+      </div>
+    </section>
+
+    <!-- DONATE SECTION -->
+    <section id="donate" style="margin-top:18px">
+      <div class="card">
+        <h2 style="color:var(--accent-dark)">Donate / दान करें</h2>
+        <p class="small">समर्थन के लिए QR स्कैन करें:</p>
+
+        <div class="qr-wrap">
+          <img src="https://i.ibb.co/GvxgdNLd/IMG-20251127-WA0012.jpg">
+          <div>
+            <p class="small"><b>WhatsApp:</b> <a href="https://wa.me/917878672098">+91 78786 72098</a></p>
+            <a class="donate" href="https://wa.me/917878672098?text=नमस्ते%20मैं%20दान%20करना%20चाहता%20हूँ">Donate via WhatsApp</a>
           </div>
         </div>
       </div>
     </section>
 
-    <footer>© <span id="year"></span> अखिल भारतीय सनातन धर्म रक्षक परिषद — All Rights Reserved.</footer>
+    <!-- APP LINK SECTION (YOU REQUESTED, INSERTED HERE) -->
+    <section id="app" style="margin-top:18px">
+      <div class="card">
+        <h2 style="color:var(--accent-dark)">Our Community App</h2>
+        <p class="small">हमारे आधिकारिक समुदाय से जुड़ने के लिए नीचे क्लिक करें:</p>
 
+        <a class="btn" style="margin-top:10px;display:inline-block"
+           href="https://kutumb.app/7b3c37e6801d?ref=V9RAH&screen=community_card_section"
+           target="_blank">
+          Join on Kutumb App
+        </a>
+      </div>
+    </section>
+
+    <!-- JOIN US -->
+    <section id="join" style="margin-top:18px">
+      <div class="card">
+        <h2 style="color:var(--accent-dark)">Join Us / हमसे जुड़ें</h2>
+        <p class="small">नाम भरें और WhatsApp पर भेजें:</p>
+
+        <form id="joinForm" class="join-form" onsubmit="return handleJoin(event)">
+          <input type="text" id="joinName" placeholder="आपका नाम" required>
+          <button type="submit">Join / Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section style="margin-top:18px">
+      <div class="card">
+        <h2 style="color:var(--accent-dark)">Contact / संपर्क</h2>
+
+        <p class="small"><b>Phone:</b> <a href="tel:+919730784366">+91 97307 84366</a></p>
+        <p class="small"><b>Email:</b> <a href="mailto:absdrp.hindu.org.pali@gmail.com">absdrp.hindu.org.pali@gmail.com</a></p>
+        <p class="small"><b>Address:</b> District Pali, Rajasthan</p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> अखिल भारतीय सनातन धर्म रक्षक परिषद
+    </footer>
   </main>
 
-  <a class="wa-fab" href="https://wa.me/919730784366">
+  <!-- FLOATING WHATSAPP -->
+  <a class="wa-fab" href="https://wa.me/919730784366?text=नमस्ते">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
   </a>
 
   <script>
     document.getElementById('year').innerText = new Date().getFullYear();
+
+    function handleJoin(e){
+      e.preventDefault();
+      var name = document.getElementById('joinName').value.trim();
+      if(!name){ alert("नाम भरें"); return false; }
+      var msg = "नमस्ते, मेरा नाम " + name + " है। मैं संगठन में जुड़ना चाहता हूँ।";
+      window.open("https://wa.me/917878672098?text=" + encodeURIComponent(msg), "_blank");
+      return false;
+    }
   </script>
 
 </body>
