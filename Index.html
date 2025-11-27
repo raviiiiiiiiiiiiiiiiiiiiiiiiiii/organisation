@@ -80,6 +80,13 @@
 
     /* tiny note for file cite (required) */
     .filecite{font-size:.78rem;color:var(--muted);margin-top:10px}
+
+    /* join form */
+    .join-form{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .join-form input[type="text"]{padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);min-width:200px}
+    .join-form button{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#fff;font-weight:700}
+    .qr-wrap{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .qr-wrap img{max-width:220px;height:auto;border-radius:8px;border:4px solid #fff;box-shadow:0 8px 20px rgba(0,0,0,0.08)}
   </style>
 </head>
 <body>
@@ -185,7 +192,7 @@
           <a href="#news">
             <img src="https://i.ibb.co/PsQ6CbWH/IMG-20251127-WA0006.jpg" alt="news article">
           </a>
-          <div class="filecite">Source: chat assets and images provided. 1</div>
+          <div class="filecite">Source: chat assets and images provided. 0</div>
         </div>
       </aside>
     </section>
@@ -210,6 +217,66 @@
         <p class="small" style="margin-bottom:12px">न्यूज़ पेपर क्लिप: 'गाडिया लोहार समाज की भावनाओं को आहत करने वाले गीत पर कार्रवाई, युवक ने मांगी माफी' — (स्रोत: भेजी गई इमेज)</p>
         <img src="https://i.ibb.co/PsQ6CbWH/IMG-20251127-WA0006.jpg" alt="news article big" style="width:100%;border-radius:10px">
         <p class="small" style="margin-top:10px">आप चाहें तो यह लेख साइट पर अलग 'Press' पेज पर पूरा अपलोड कर दूँ — text transcription भी कर दूँगा।</p>
+      </div>
+    </section>
+
+    <!-- EXTRACTED ARTICLE SECTION (NEW - not just a news list) -->
+    <section id="featured-article" style="margin-top:18px">
+      <div class="card">
+        <h2 style="margin:0 0 8px;color:var(--accent-dark)">Featured Article — Extract (लेख से निकाला गया सार)</h2>
+
+        <p class="small" style="margin-bottom:8px"><strong>Headline (हिंदी):</strong> गाडिया लोहार समाज की भावनाओं को आहत करने वाले गीत पर कार्रवाई, युवक ने मांगी माफी</p>
+
+        <div style="margin-top:8px;color:var(--muted);line-height:1.6">
+          <ul>
+            <li><strong>मामले का सार:</strong> समाचार के अनुसार एक युवक द्वारा सोशल मीडिया पर प्रकाशित/प्रसारित एक गीत से गाडिया लोहार समाज की भावनाएँ आहत हुईं। समाज के नेताओं ने इसकी कड़ी निंदा की और कार्रवाई की मांग की।</li>
+            <li><strong>क्षमा प्रार्थना:</strong> घटना के बाद उक्त युवक ने सार्वजनिक रूप से माफी माँगी और सोशल मीडिया से संबंधित गीत/कंटेंट को हटा दिया।</li>
+            <li><strong>प्रमुख नाम / रिश्ते (आलेख में उल्लिखित):</strong> युवक का नाम (लेख के अनुसार) — <em>विष्णु कुमार सोनी</em> (अर्थात जो माफी माँगा)। लेख में गाडिया लोहार संगठन के प्रतिनिधि <em>करण भवर्लाल गाड़िया लोहार</em> का उल्लेख भी है।</li>
+            <li><strong>संगठन की प्रतिक्रिया:</strong> गाडिया लोहार विकास समिति और अन्य कार्यकर्ता/ऑर्गनाइज़ेशन ने इस मुद्दे पर सक्रिय भूमिका निभाई और समाज की एकता व मर्यादा बनाए रखने पर ज़ोर दिया।</li>
+            <li><strong>अनुवर्ती कदम:</strong> मामले को संवाद और समाजिक समझौते से सुलझाया गया; सोशल मीडिया से विवादित कंटेंट हटवाना और सार्वजनिक माफी ली गई।</li>
+            <li><strong>स्रोत:</strong> मूल समाचार क्लिप — image provided by client.</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:12px">
+          <div style="font-weight:800;color:var(--accent-dark)">यदि आप इस मामले में संपर्क करना चाहते हैं</div>
+          <p class="small" style="margin-top:6px">तुरंत संपर्क (WhatsApp): <a href="https://wa.me/917878672098" target="_blank" rel="noopener">+91 78786 72098</a></p>
+          <p class="small">यदि आप लेख का पूरा पाठ (transcription) चाहते हैं तो मैं इमेज से टेक्स्ट निकालकर अलग पेज पर अपलोड कर दूँगा।</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DONATE SECTION (NEW) -->
+    <section id="donate" style="margin-top:18px">
+      <div class="card">
+        <h2 style="margin:0 0 8px;color:var(--accent-dark)">Donate / दान करें</h2>
+        <p class="small">समर्थन के लिए आपका धन्यवाद — फिलहाल दान के लिए QR को स्कैन करें या नीचे WhatsApp पर संपर्क करें। (यह इमेज बिना क्रॉप के embed की गई है।)</p>
+
+        <div class="qr-wrap" style="margin-top:12px">
+          <!-- display full QR image as-is (no cropping) -->
+          <img src="https://i.ibb.co/GvxgdNLd/IMG-20251127-WA0012.jpg" alt="Donation QR">
+          <div style="flex:1">
+            <p class="small" style="margin:0 0 8px"><strong>Quick contact for donations:</strong></p>
+            <p class="small" style="margin:0 0 6px">WhatsApp: <a href="https://wa.me/917878672098" target="_blank" rel="noopener">+91 78786 72098</a></p>
+            <p class="small" style="margin:0 0 6px">If you want an online payment gateway (Razorpay/UPI) integrated, provide org bank/UPI details and I will set it up.</p>
+            <a class="donate" href="https://wa.me/917878672098?text=नमस्ते%20मैं%20दान%20करना%20चाहता%20हूँ.%20कृपया%20विकल्प%20बताइए" target="_blank" rel="noopener">Contact to Donate (WhatsApp)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN US (FORM -> opens WhatsApp chat with name) -->
+    <section id="join" style="margin-top:18px">
+      <div class="card">
+        <h2 style="margin:0 0 8px;color:var(--accent-dark)">Join Us / हमसे जुड़ें</h2>
+        <p class="small">नीचे अपना नाम भरें और 'Join' दबाएँ — यह सीधे WhatsApp चैट खोलेगा और टीम को आपका आवेदन भेजेगा।</p>
+
+        <form id="joinForm" class="join-form" onsubmit="return handleJoin(event)">
+          <input type="text" id="joinName" name="joinName" placeholder="आपका पूरा नाम" required>
+          <button type="submit">Join / Submit</button>
+        </form>
+
+        <p class="small" style="margin-top:10px">आपके भरे नाम के साथ हमारे प्रतिनिधि आपको आगे की जानकारी और अगेन्डा बताएँगे।</p>
       </div>
     </section>
 
@@ -254,7 +321,20 @@
     // current year
     document.getElementById('year').innerText = new Date().getFullYear();
 
-    // small accessibility: open external links in new tab - already set for targeted ones
+    // Join form handler: opens WhatsApp with prefilled name message to +91 78786 72098
+    function handleJoin(e){
+      e.preventDefault();
+      var name = document.getElementById('joinName').value || '';
+      name = name.trim();
+      if(!name){
+        alert('कृपया अपना नाम भरें।');
+        return false;
+      }
+      var msg = 'नमस्ते, मेरा नाम ' + name + ' है। मैं अखिल भारतीय सनातन धर्म रक्षक परिषद् में जुड़ना चाहता/चाहती हूँ। कृपया आगे की जानकारी दें।';
+      var url = 'https://wa.me/917878672098?text=' + encodeURIComponent(msg);
+      window.open(url, '_blank');
+      return false;
+    }
   </script>
 </body>
 </html>
