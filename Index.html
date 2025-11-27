@@ -1,119 +1,162 @@
 <!doctype html>
 <html lang="hi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>अखिल भारतीय सनातन धर्म रक्षक परिषद — ABSDRP</title>
-
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --bg:#fff8ef;
+      --card:#ffffff;
       --accent:#e86d00;
       --accent-dark:#c45500;
       --muted:#6b5848;
-      --card:#fff;
       --radius:14px;
       --maxw:1100px;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:"Noto Sans",sans-serif;background:var(--bg);}
-    a{text-decoration:none;color:inherit;}
+    body{font-family:"Noto Sans",sans-serif;background:var(--bg);color:#222}
 
-    .container{max-width:var(--maxw);margin:0 auto;padding:22px;}
+    .container{max-width:var(--maxw);margin:auto;padding:18px}
 
-    /* HEADER */
+    /* ---------------- HEADER ---------------- */
     header{
-      position:sticky;top:0;z-index:999;
-      background:rgba(255,255,255,0.96);
+      position:sticky;top:0;z-index:100;
+      background:rgba(255,255,255,0.9);
       backdrop-filter:blur(8px);
       border-bottom:1px solid rgba(0,0,0,0.08);
+      padding:10px 0;
     }
-    nav{display:flex;justify-content:space-between;align-items:center;position:relative;padding:14px 0;}
 
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--accent-dark);}
-    .brand img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+    nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      position:relative;
+    }
 
-    .navlinks{display:flex;gap:10px;align-items:center;}
-    .btn{padding:10px 14px;border-radius:10px;border:2px solid var(--accent);color:var(--accent-dark);font-weight:700;}
-    .btn.full{background:var(--accent);color:#fff;border:none;}
+    .brand{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .brand img{
+      width:52px;height:52px;
+      border-radius:50%;
+      object-fit:cover;
+      border:2px solid #fff;
+    }
+    .brand-text{
+      font-size:1rem;
+      font-weight:800;
+      color:var(--accent-dark);
+      line-height:1.2;
+    }
 
-    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
-    .hamburger span{width:28px;height:3px;background:var(--accent-dark);border-radius:3px;transition:.25s;}
-    .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
-    .hamburger.open span:nth-child(2){opacity:0;}
-    .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+    .navlinks{
+      display:flex;
+      gap:10px;
+    }
+
+    .btn{
+      padding:10px 14px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.9rem;
+      border:2px solid var(--accent);
+      color:var(--accent-dark);
+      background:#fff;
+      display:inline-block;
+    }
+    .btn.primary{
+      background:var(--accent);
+      color:#fff;
+      border-color:var(--accent-dark);
+    }
+
+    /* ---------------- HAMBURGER ---------------- */
+    .hamburger{
+      display:none;
+      flex-direction:column;
+      gap:5px;
+      cursor:pointer;
+    }
+    .hamburger span{
+      width:26px;height:3px;
+      background:var(--accent-dark);
+      border-radius:3px;
+      transition:.25s;
+    }
+    .hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+    .hamburger.open span:nth-child(2){opacity:0}
+    .hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 
     #mobileNav{
-      display:none;position:absolute;top:100%;right:0;background:#fff;
-      padding:14px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.2);
-      flex-direction:column;min-width:160px;z-index:200;
+      display:none;
+      position:absolute;
+      top:100%;
+      right:0;
+      background:#fff;
+      padding:14px;
+      border-radius:14px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.15);
+      min-width:180px;
+      flex-direction:column;
+      z-index:200;
     }
     #mobileNav.active{display:flex;}
-    #mobileNav a{
-      padding:10px;border-radius:8px;margin-bottom:10px;
-      background:#fff4e6;border:1px solid rgba(0,0,0,0.1);font-weight:700;color:var(--accent-dark);
-    }
+    #mobileNav a{margin-bottom:10px;}
 
-    @media(max-width:750px){
+    @media(max-width:720px){
       .navlinks{display:none;}
       .hamburger{display:flex;}
     }
 
-    /* CARDS */
-    .card{
-      background:var(--card);border-radius:var(--radius);
-      padding:20px;box-shadow:0 10px 25px rgba(0,0,0,.06);
-    }
-    .org-name{font-size:1.4rem;font-weight:800;color:var(--accent-dark);}
-    .small{font-size:.92rem;color:var(--muted);}
+    /* ---------------- GLOBAL ---------------- */
+    .card{background:var(--card);padding:20px;border-radius:var(--radius);border:1px solid rgba(0,0,0,0.05);margin-top:20px}
+    h2{color:var(--accent-dark);margin-bottom:10px;font-size:1.3rem;font-weight:800}
+    .small{font-size:.9rem;color:var(--muted)}
 
-    /* GALLERY */
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px;}
-    @media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr);}}
-    @media(max-width:600px){.gallery{grid-template-columns:1fr;}}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+    .gallery img{width:100%;height:140px;object-fit:cover;border-radius:12px}
 
-    .gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;}
+    /* join-form */
+    .join-form{display:flex;gap:8px;margin-top:10px}
+    .join-form input{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.2)}
 
-    /* WHATSAPP FAB */
+    /* spacing fixes */
+    .fixed-card{margin-top:20px !important;margin-bottom:0 !important;padding-bottom:20px !important}
+
+    /* Floating WhatsApp */
     .wa-fab{
-      position:fixed;right:18px;bottom:18px;z-index:900;
-      width:64px;height:64px;border-radius:50%;
+      position:fixed;right:16px;bottom:16px;z-index:300;
+      width:58px;height:58px;border-radius:50%;
+      background:var(--accent);
       display:flex;align-items:center;justify-content:center;
-      background:var(--accent);box-shadow:0 10px 25px rgba(0,0,0,.3);
-      border:4px solid #fff;
+      box-shadow:0 10px 25px rgba(0,0,0,0.25);
     }
-    .wa-fab img{width:32px;height:32px;}
-
-    .join-form input{
-      width:100%;padding:10px;border-radius:10px;
-      border:1px solid rgba(0,0,0,0.2);font-size:1rem;
-    }
-    .join-form button{
-      padding:10px 14px;border:none;border-radius:10px;
-      background:var(--accent-dark);color:#fff;font-weight:700;margin-top:10px;
-    }
-
-    footer{text-align:center;margin-top:40px;padding:20px;color:var(--muted);}
+    .wa-fab img{width:32px;height:32px}
   </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 <header>
   <nav class="container">
 
     <div class="brand">
       <img src="https://i.ibb.co/DPTy2cLB/IMG-20251127-WA0013-1.jpg">
-      अखिल भारतीय सनातन धर्म रक्षक परिषद
+      <div class="brand-text">अखिल भारतीय सनातन धर्म रक्षक परिषद</div>
     </div>
 
     <div class="navlinks">
       <a class="btn" href="#about">About</a>
-      <a class="btn full" href="https://wa.me/917878672098">WhatsApp</a>
+      <a class="btn primary" href="https://wa.me/917878672098" target="_blank">WhatsApp</a>
       <a class="btn" href="#join">Join</a>
     </div>
 
@@ -122,33 +165,38 @@
     </div>
 
     <div id="mobileNav">
-      <a href="#about">About</a>
-      <a href="https://wa.me/917878672098">WhatsApp</a>
-      <a href="#join">Join</a>
+      <a class="btn" href="#about">About</a>
+      <a class="btn primary" href="https://wa.me/917878672098" target="_blank">WhatsApp</a>
+      <a class="btn" href="#join">Join</a>
     </div>
 
   </nav>
 </header>
 
-<main class="container">
+<!-- ================= HERO ================= -->
+<section id="about" class="container card">
+  <h2>अखिल भारतीय सनातन धर्म रक्षक परिषद</h2>
 
-<!-- ABOUT -->
-<section id="about" class="card">
-  <div class="org-name">अखिल भारतीय सनातन धर्म रक्षक परिषद</div>
-  <p class="small">सनातन धर्म संरक्षण • सामाजिक सुरक्षा • मानव अधिकार • समाज सेवा</p>
+  <div class="small">सनातन धर्म संरक्षण · सामाजिक सुरक्षा · मानव अधिकार · समाज सेवा</div>
 
-  <div style="margin-top:10px">
-    <b>मुख्य संपर्क</b><br>
-    फोन: <a href="tel:9730784366">+91 97307 84366</a><br>
-    Email: absdrp.hindu.org.pali@gmail.com<br>
-    प्रांतीय कार्यालय: पाली, राजस्थान<br>
-    प्रमुख प्रतिनिधि: करण भवर्लाल गाड़िया लोहार
+  <div style="margin-top:12px">
+    <div><b>मुख्य संपर्क:</b> +91 97307 84366</div>
+    <div><b>Email:</b> absdrp.hindu.org.pali@gmail.com</div>
+    <div><b>प्रांतीय कार्यालय:</b> पाली, राजस्थान</div>
+    <div><b>प्रमुख प्रतिनिधि:</b> करण भवर्लाल गाडिया लोहार</div>
   </div>
+
+  <!-- HERO BUTTONS ADDED -->
+  <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+    <a class="btn primary" href="#donate">Donate Us</a>
+    <a class="btn" href="#join">Join</a>
+  </div>
+
 </section>
 
-<!-- GALLERY -->
-<section class="card" style="margin-top:18px">
-  <h2 style="color:var(--accent-dark)">Gallery</h2>
+<!-- ================= GALLERY ================= -->
+<section class="container card">
+  <h2>Gallery</h2>
   <div class="gallery">
     <img src="https://i.ibb.co/DPzTy6gh/IMG-20251127-WA0011.jpg">
     <img src="https://i.ibb.co/5h91FW0g/IMG-20251127-WA0010.jpg">
@@ -156,85 +204,73 @@
   </div>
 </section>
 
-<!-- NEWS + PRESS SUMMARY INSIDE SAME SECTION -->
-<section id="news" class="card" style="margin-top:18px">
-  <h2 style="color:var(--accent-dark)">News Article</h2>
-
-  <img src="https://i.ibb.co/PsQ6CbWH/IMG-20251127-WA0006.jpg" style="width:100%;border-radius:12px;margin-top:12px;">
-
-  <h3 style="margin-top:12px;color:var(--accent-dark)">📰 घटना का संक्षिप्त विवरण</h3>
-
-  <p class="small" style="margin-top:6px;">
-    गाडिया लोहार समाज की भावनाओं को आहत करने वाले गीत पर संगठन ने संज्ञान लिया। संबंधित युवक से संपर्क कर उसे समझाया गया और उसने सार्वजनिक रूप से माफी मांगी। आपत्तिजनक वीडियो सोशल मीडिया से हटाया गया।  
-    <br><br>
-    संगठन का स्पष्ट संदेश:  
-    <b>“समाज की मर्यादा, संस्कृति और सम्मान के साथ किसी भी प्रकार की छेड़खानी बर्दाश्त नहीं की जाएगी।”</b>
+<!-- ================= PRESS ================= -->
+<section class="container card">
+  <h2>Press Summary</h2>
+  <img src="https://i.ibb.co/PsQ6CbWH/IMG-20251127-WA0006.jpg" style="width:100%;border-radius:12px;margin-bottom:10px;">
+  <p class="small">
+    गाडिया लोहार समाज की भावनाओं को आहत करने वाले गीत पर कार्रवाई की गई। युवक ने समाज से सार्वजनिक रूप से माफी माँगी।
   </p>
 </section>
 
-<!-- DONATE -->
-<section id="donate" class="card" style="margin-top:18px">
-  <h2 style="color:var(--accent-dark)">Donate Us</h2>
-
-  <img src="https://i.ibb.co/GvxgdNLd/IMG-20251127-WA0012.jpg" style="width:100%;border-radius:14px;margin-top:12px;">
-
-  <div style="margin-top:14px;display:flex;gap:10px;">
-    <a class="btn full" href="https://wa.me/917878672098?text=Donation%20Query">WhatsApp</a>
-    <a class="btn" href="mailto:absdrp.hindu.org.pali@gmail.com">Email</a>
-  </div>
+<!-- ================= DONATE ================= -->
+<section class="container card" id="donate">
+  <h2>Donate</h2>
+  <img src="https://i.ibb.co/GvxgdNLd/IMG-20251127-WA0012.jpg" style="width:100%;border-radius:12px;">
+  <a href="https://wa.me/917878672098?text=नमस्ते,%20मैं%20दान%20करना%20चाहता%20हूँ" target="_blank" class="btn primary" style="margin-top:12px;display:inline-block">WhatsApp पर दान करें</a>
 </section>
 
-<!-- JOIN -->
-<section id="join" class="card" style="margin-top:18px">
-  <h2 style="color:var(--accent-dark)">Join Us</h2>
+<!-- ================= JOIN ================= -->
+<section class="container card" id="join">
+  <h2>Join Us</h2>
+  <p class="small">नीचे नाम भरें — WhatsApp में नाम के साथ मैसेज खुल जाएगा।</p>
 
-  <form class="join-form" onsubmit="return joinSubmit(event)" style="margin-top:12px;">
+  <form class="join-form" onsubmit="return joinSubmit(event)">
     <input type="text" id="joinName" placeholder="आपका नाम" required>
-    <button type="submit">Join</button>
+    <button class="btn primary" type="submit">Join</button>
   </form>
 </section>
 
-<!-- KUTUMB APP LINK -->
-<section class="card" style="margin-top:18px;">
-  <h2 style="color:var(--accent-dark)">Kutumb App Community</h2>
-  <p class="small" style="margin-top:6px;">हमारी कम्युनिटी से जुड़ें:</p>
-  <a class="btn full" href="https://kutumb.app/7b3c37e6801d?ref=V9RAH&screen=community_card_section" target="_blank">Join Kutumb App</a>
+<!-- ================= Kutumb FIXED ================= -->
+<section class="container card fixed-card">
+  <h2>Kutumb App Community</h2>
+  <p class="small">हमारी कम्युनिटी से जुड़ें:</p>
+  <a href="https://kutumb.app/7b3c37e6801d?ref=V9RAH&screen=community_card_section" target="_blank" class="btn primary" style="margin-top:10px">Join Kutumb App</a>
 </section>
 
-<!-- WHATSAPP CHANNEL LINK -->
-<section class="card" style="margin-top:18px;">
-  <h2 style="color:var(--accent-dark)">WhatsApp Channel</h2>
-  <p class="small" style="margin-top:6px;">हमारे आधिकारिक चैनल को फॉलो करें:</p>
-  <a class="btn full" href="https://whatsapp.com/channel/0029VbCesZCAojYrIelu4K0t" target="_blank">Follow Channel</a>
+<!-- ================= Channel FIXED ================= -->
+<section class="container card fixed-card">
+  <h2>WhatsApp Channel</h2>
+  <p class="small">हमारे ऑफिशियल चैनल को फ़ॉलो करें:</p>
+  <a href="https://whatsapp.com/channel/0029VbCesZCAojYrIelu4K0t" target="_blank" class="btn primary" style="margin-top:10px">Follow Channel</a>
 </section>
 
-<footer>
+<!-- ================= FOOTER ================= -->
+<footer class="container" style="text-align:center;margin:30px 0;color:var(--muted)">
   © <span id="year"></span> अखिल भारतीय सनातन धर्म रक्षक परिषद
 </footer>
 
-</main>
-
-<!-- Floating WA -->
-<a class="wa-fab" href="https://wa.me/917878672098">
+<!-- Floating WhatsApp -->
+<a class="wa-fab" href="https://wa.me/917878672098" target="_blank">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
 </a>
 
 <script>
-document.getElementById("year").innerText = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
-const ham = document.getElementById("hamburger");
-const menu = document.getElementById("mobileNav");
+const ham=document.getElementById("hamburger");
+const menu=document.getElementById("mobileNav");
 
-ham.addEventListener("click", ()=>{
+ham.addEventListener("click",()=>{
   ham.classList.toggle("open");
   menu.classList.toggle("active");
 });
 
 function joinSubmit(e){
   e.preventDefault();
-  let n = document.getElementById("joinName").value.trim();
-  if(!n) return;
-  let msg = encodeURIComponent("नमस्ते, मेरा नाम " + n + " है। मैं संगठन से जुड़ना चाहता हूँ।");
+  let name=document.getElementById("joinName").value.trim();
+  if(!name) return false;
+  let msg=encodeURIComponent("नमस्ते, मेरा नाम "+name+" है। मैं जुड़ना चाहता हूँ।");
   window.open("https://wa.me/917878672098?text="+msg,"_blank");
 }
 </script>
